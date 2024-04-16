@@ -102,6 +102,10 @@
     opacity: 0;
   }
 
+  button.widget-button.btn.btn-default.popup-menu-button.toggle-admin-menu.no-text.btn-icon {
+    height: 100%;
+  }
+
   .reader-mode-toggle.active svg {
     color: var(--tertiary);
   }
