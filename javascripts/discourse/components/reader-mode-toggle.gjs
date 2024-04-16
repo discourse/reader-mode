@@ -53,6 +53,7 @@ export default class readerModeToggle extends Component {
             class={{concatClass "icon" "btn-default" "reader-mode-toggle" (if this.isActive "active")}}
             title="Toggle Reader Mode"
             @action={{this.toggleReaderMode}}
+            @preventFocus={{true}}
           >
             {{~icon "book-reader"}}
           </DButton>
