@@ -1,8 +1,11 @@
 .timeline-controls {
   display: flex;
   .reader-mode-toggle {
-    height: 32px;
     margin-right: 0.5em;
+  }
+
+  button.widget-button.btn.btn-default.popup-menu-button.toggle-admin-menu.no-text.btn-icon {
+    height: 100%;
   }
 }
 
@@ -100,10 +103,6 @@
   .timeline-scrollarea-wrapper,
   .timeline-footer-controls {
     opacity: 0;
-  }
-
-  button.widget-button.btn.btn-default.popup-menu-button.toggle-admin-menu.no-text.btn-icon {
-    height: 100%;
   }
 
   .reader-mode-toggle.active svg {
