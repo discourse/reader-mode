@@ -15,7 +15,9 @@ export default class readerModeToggle extends Component {
   @tracked readerModeActive = false;
   @tracked viewingTopic = undefined;
   @tracked
-  sidebarIsOpen = getOwner(this).lookup("controller:application").get("showSidebar");
+  sidebarIsOpen = getOwner(this)
+    .lookup("controller:application")
+    .get("showSidebar");
   @tracked sidebarPreviousState = undefined;
 
   constructor() {
@@ -36,7 +38,6 @@ export default class readerModeToggle extends Component {
 
   @action
   toggleReaderMode() {
-
     if (this.sidebarIsOpen && !this.isActive) {
       getOwner(this).lookup("controller:application").set("showSidebar", false);
       this.readerModeActive = !this.readerModeActive;
@@ -44,20 +45,24 @@ export default class readerModeToggle extends Component {
       getOwner(this).lookup("controller:application").set("showSidebar", true);
       this.readerModeActive = false;
     }
-
   }
 
   <template>
-      {{#if this.isTopicView}}
-        {{bodyClass this.bodyClassText}}
-          <DButton
-            class={{concatClass "icon" "btn-default" "reader-mode-toggle" (if this.isActive "active")}}
-            title="Toggle Reader Mode"
-            @action={{this.toggleReaderMode}}
-            @preventFocus={{true}}
-          >
-            {{~icon "book-reader"}}
-          </DButton>
-      {{/if}}
+    {{#if this.isTopicView}}
+      {{bodyClass this.bodyClassText}}
+      <DButton
+        class={{concatClass
+          "icon"
+          "btn-default"
+          "reader-mode-toggle"
+          (if this.isActive "active")
+        }}
+        title="Toggle Reader Mode"
+        @action={{this.toggleReaderMode}}
+        @preventFocus={{true}}
+      >
+        {{~icon "book-reader"}}
+      </DButton>
+    {{/if}}
   </template>
 }
