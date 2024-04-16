@@ -1,0 +1,137 @@
+.timeline-controls {
+  display: flex;
+  .reader-mode-toggle {
+    height: 32px;
+    margin-right: 0.5em;
+  }
+}
+
+.reader-mode {
+  .d-header {
+    height: 5em;
+  }
+  .topic-area#topic::before {
+    content: "";
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: var(--secondary);
+    opacity: 0.95;
+    left: 0;
+    top: 0;
+    z-index: 100;
+  }
+  
+  #reply-control.open,
+  .extra-info-wrapper {
+    filter: grayscale(1);
+  }
+
+  .extra-info-wrapper {
+    font-family: serif;
+    .header-title {
+      font-size: var(--font-up-5);
+      font-family: serif ;
+    }
+  }
+
+  #topic-title {
+    position: relative;
+    z-index: 102;
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .posts-wrapper {
+    padding: 1em 0 0 0;
+    background-color: var(--secondary);
+    z-index: 102;
+  }
+
+  .header-sidebar-toggle,
+  .home-logo-wrapper-outlet,
+  .d-header-icons .header-dropdown-toggle {
+    opacity: 0.05;
+  }
+
+  .cooked {
+    font-family: serif;
+    font-size: var(--font-up-2);
+  }
+
+  .cooked h1,
+  .cooked h2,
+  .cooked h3,
+  .cooked h4,
+  .cooked h5,
+  .cooked h6 {
+    font-family: serif;
+  }
+
+  .posts-wrapper img {
+    filter: grayscale(1);
+  }
+
+  .discourse-reactions-reaction-button {
+    filter: grayscale(1);
+  }
+
+  .post-notice,
+  .small-action.time-gap,
+  .topic-map {
+    display: none;
+  }
+
+  @media screen and (max-width: 925px) {
+    .posts-wrapper {
+      padding-right: 2em !important;
+    }
+  }
+
+  // .container.posts > .row {
+  //   grid-area: unset;
+  // }
+  .container.posts .topic-navigation {
+    z-index: 102;
+  }
+
+  .timeline-controls .btn:not(.reader-mode-toggle), 
+  .timeline-scrollarea-wrapper,
+  .timeline-footer-controls {
+    opacity: 0;
+  }
+
+  .reader-mode-toggle.active svg {
+    color: var(--tertiary);
+  }
+
+
+  .onscreen-post .row {
+    justify-content: center;
+  }
+
+  .topic-body {
+    width: 90%;
+  }
+
+  @media screen and (min-width: 1200px) {
+    .posts-wrapper {
+      width: 85%;
+      margin: 0 auto;
+    }
+  }
+
+  #post_1 .topic-body,
+  #post_1 .topic-avatar {
+    border-top: none;
+  }
+
+  .time-gap + .topic-post .topic-body,
+  .time-gap + .topic-post .topic-avatar {
+    border-top: 1px solid var(--primary-low);
+  }
+  .reader-mode-icon {
+    z-index: 9999;
+  }
+}
