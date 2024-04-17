@@ -9,6 +9,40 @@
   }
 }
 
+#reply-control.open,
+.extra-info-wrapper,
+.video-placeholder-container {
+  transition: filter 0.3s;
+}
+
+.post-notice,
+.time-gap.small-action {
+  transition: height 0.3s, opacity 0.3s;
+}
+
+.topic-map {
+  transition: height 0.3s, opacity 0.5s;
+}
+
+#post_1 .topic-body,
+#post_1 .topic-avatar {
+  border-top: 1px solid transparent;
+}
+
+.time-gap + .topic-post .topic-body,
+.time-gap + .topic-post .topic-avatar {
+  border-top: 1px solid transparent;
+}
+
+.header-sidebar-toggle,
+.home-logo-wrapper-outlet,
+.d-header-icons,
+.timeline-controls .btn:not(.reader-mode-toggle),
+.timeline-scrollarea-wrapper,
+.timeline-footer-controls {
+  transition: opacity 0.3s;
+}
+
 .reader-mode {
   .topic-area#topic::before {
     content: "";
@@ -21,6 +55,11 @@
     left: 0;
     top: 0;
     z-index: 100;
+    transition: opacity 0.3s;
+  }
+
+  &.reader-mode-transitioning .topic-area#topic::before {
+    opacity: 0;
   }
 
   #reply-control.open,
@@ -32,12 +71,9 @@
   #topic-title {
     position: relative;
     z-index: 102;
-    width: 85%;
-    margin: 0 auto;
   }
 
   .posts-wrapper {
-    padding: 1em 0 0 0;
     background-color: var(--secondary);
     z-index: 102;
   }
@@ -57,20 +93,14 @@
   }
 
   .post-notice,
-  .small-action.time-gap,
+  .time-gap.small-action,
   .topic-map {
-    display: none;
+    // height: 0 !important;
+    // padding: 0 !important;
+    // overflow: hidden;
+    opacity: 0;
   }
 
-  @media screen and (max-width: 925px) {
-    .posts-wrapper {
-      padding-right: 2em !important;
-    }
-  }
-
-  // .container.posts > .row {
-  //   grid-area: unset;
-  // }
   .container.posts .topic-navigation {
     z-index: 102;
   }
@@ -85,24 +115,9 @@
     color: var(--tertiary);
   }
 
-  .onscreen-post .row {
-    justify-content: center;
-  }
-
-  .topic-body {
-    width: 90%;
-  }
-
-  @media screen and (min-width: 1200px) {
-    .posts-wrapper {
-      width: 85%;
-      margin: 0 auto;
-    }
-  }
-
   #post_1 .topic-body,
   #post_1 .topic-avatar {
-    border-top: none;
+    border-top: 1px solid transparent;
   }
 
   .time-gap + .topic-post .topic-body,
