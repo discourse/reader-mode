@@ -4,7 +4,6 @@ import { action } from "@ember/object";
 import DButton from "discourse/components/d-button";
 import bodyClass from "discourse/helpers/body-class";
 import concatClass from "discourse/helpers/concat-class";
-import icon from "discourse-common/helpers/d-icon";
 import discourseLater from "discourse-common/lib/later";
 
 export default class ReaderModeToggle extends Component {
