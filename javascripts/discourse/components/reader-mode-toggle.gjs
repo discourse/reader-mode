@@ -46,29 +46,9 @@ export default class readerModeToggle extends Component {
     }
   }
 
-  @action
-  setStyles() {
-    document.querySelectorAll(".post-notice").forEach((el) => {
-      el.style.height = el.scrollHeight + "px";
-      el.style.padding = "0px";
-    });
-
-    document.querySelectorAll(".time-gap.small-action").forEach((el) => {
-      el.style.height = el.scrollHeight + "px";
-      el.style.padding = "0px";
-    });
-
-    document.querySelectorAll(".topic-map").forEach((el) => {
-      el.style.height = el.scrollHeight + "px";
-      el.style.padding = "0px";
-    });
-  }
-
   <template>
     {{bodyClass this.bodyClassText}}
     <DButton
-      {{didInsert this.setStyles}}
-      {{didUpdate this.setStyles}}
       class={{concatClass
         "icon"
         "btn-default"
