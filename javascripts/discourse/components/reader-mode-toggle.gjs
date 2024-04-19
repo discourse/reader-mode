@@ -30,7 +30,7 @@ export default class ReaderModeToggle extends Component {
   }
 
   handleDocumentKeydown(e) {
-    if (e.key === "Escape" && this.readerModeActive) {
+    if (e.ctrlKey && e.key === "r") {
       this.toggleReaderMode();
     }
   }
@@ -53,7 +53,7 @@ export default class ReaderModeToggle extends Component {
       @action={{this.toggleReaderMode}}
       @icon="book-reader"
       @preventFocus={{true}}
-      title="Toggle Reader Mode"
+      title="Toggle Reader Mode (ctrl + r)"
       class={{concatClass
         "icon"
         "btn-default"

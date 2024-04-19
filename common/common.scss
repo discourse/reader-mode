@@ -62,7 +62,11 @@
     opacity: 0;
   }
 
-  #reply-control.open,
+  .discourse-reactions-counter {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
   .extra-info-wrapper,
   .video-placeholder-container {
     filter: grayscale(1);
@@ -84,18 +88,17 @@
     opacity: 0.05;
   }
 
-  .posts-wrapper img {
-    filter: grayscale(1);
-  }
-
   .discourse-reactions-reaction-button {
     filter: grayscale(1);
   }
 
   .post-notice,
-  .time-gap.small-action,
-  .topic-map {
+  .time-gap.small-action {
     opacity: 0;
+  }
+
+  .topic-map {
+    opacity: 0.5;
   }
 
   .container.posts .topic-navigation {
@@ -112,6 +115,12 @@
     color: var(--tertiary);
   }
 
+  .topic-avatar img {
+    opacity: 0.125;
+    transition: opacity 0.3s;
+    filter: grayscale(1);
+  }
+
   #post_1 .topic-body,
   #post_1 .topic-avatar {
     border-top: 1px solid transparent;
@@ -123,5 +132,11 @@
   }
   .reader-mode-icon {
     z-index: 9999;
+  }
+  .d-header-icons,
+  .topic-admin-menu-button,
+  .timeline-scrollarea-wrapper,
+  .timeline-footer-controls {
+    pointer-events: none;
   }
 }
