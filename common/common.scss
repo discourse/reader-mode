@@ -133,4 +133,10 @@
   .reader-mode-icon {
     z-index: 9999;
   }
+  .d-header-icons,
+  .topic-admin-menu-button,
+  .timeline-scrollarea-wrapper,
+  .timeline-footer-controls {
+    pointer-events: none;
+  }
 }
