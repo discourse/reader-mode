@@ -26,72 +26,21 @@ export default class ReaderModeOptions extends Component {
 
   @action
   selectFontSize(e) {
-    let mainFontVariable =
-      e.target.value === 0 ? "1em" : `${1 + e.target.value * 0.1}em`;
-    document.documentElement.style.setProperty(
-      "--reader-mode-font-size",
-      mainFontVariable
-    );
+    const setFontSize = (property, baseValue) => {
+      const value =
+        e.target.value === 0 ? baseValue : baseValue + e.target.value * 0.1;
+      document.documentElement.style.setProperty(property, `${value}rem`);
+    };
 
-    let h1FontVariable =
-      e.target.value === 0 ? "1.517em" : `${1.517 + e.target.value * 0.1}rem`;
-    document.documentElement.style.setProperty(
-      "--reader-mode-h1-font-size",
-      h1FontVariable
-    );
-
-    let h2FontVariable =
-      e.target.value === 0 ? "1.3195em" : `${1.3195 + e.target.value * 0.1}rem`;
-    document.documentElement.style.setProperty(
-      "--reader-mode-h2-font-size",
-      h2FontVariable
-    );
-
-    let h3FontVariable =
-      e.target.value === 0 ? "1.1487em" : `${1.1487 + e.target.value * 0.1}rem`;
-    document.documentElement.style.setProperty(
-      "--reader-mode-h3-font-size",
-      h3FontVariable
-    );
-
-    let h4FontVariable =
-      e.target.value === 0 ? "1rem" : `${1 + e.target.value * 0.1}rem`;
-    document.documentElement.style.setProperty(
-      "--reader-mode-h4-font-size",
-      h4FontVariable
-    );
-
-    let h5FontVariable =
-      e.target.value === 0
-        ? "0.8706rem"
-        : `${0.8706 + e.target.value * 0.1}rem`;
-    document.documentElement.style.setProperty(
-      "--reader-mode-h5-font-size",
-      h5FontVariable
-    );
-
-    let h6FontVariable =
-      e.target.value === 0
-        ? "0.7579rem"
-        : `${0.7579 + e.target.value * 0.1}rem`;
-    document.documentElement.style.setProperty(
-      "--reader-mode-h6-font-size",
-      h6FontVariable
-    );
-
-    let smallFontVariable =
-      e.target.value === 0 ? "0.75rem" : `${0.75 + e.target.value * 0.1}rem`;
-    document.documentElement.style.setProperty(
-      "--reader-mode-small-font-size",
-      smallFontVariable
-    );
-
-    let bigFontVariable =
-      e.target.value === 0 ? "1.5rem" : `${1.5 + e.target.value * 0.1}rem`;
-    document.documentElement.style.setProperty(
-      "--reader-mode-big-font-size",
-      bigFontVariable
-    );
+    setFontSize("--reader-mode-font-size", 1);
+    setFontSize("--reader-mode-h1-font-size", 1.517);
+    setFontSize("--reader-mode-h2-font-size", 1.3195);
+    setFontSize("--reader-mode-h3-font-size", 1.1487);
+    setFontSize("--reader-mode-h4-font-size", 1);
+    setFontSize("--reader-mode-h5-font-size", 0.8706);
+    setFontSize("--reader-mode-h6-font-size", 0.7579);
+    setFontSize("--reader-mode-small-font-size", 0.75);
+    setFontSize("--reader-mode-big-font-size", 1.5);
   }
 
   @action
