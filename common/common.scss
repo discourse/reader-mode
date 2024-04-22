@@ -1,3 +1,23 @@
+:root {
+  --reader-mode-font-family: inherit;
+  --reader-mode-text-color: var(--primary);
+  --reader-mode-bg-color: var(--secondary);
+  --reader-mode-font-size: inherit;
+  --reader-mode-h1-font-size: var(--font-up-3-rem);
+  --reader-mode-h2-font-size: var(--font-up-2-rem);
+  --reader-mode-h3-font-size: var(--font-up-1-rem);
+  --reader-mode-h4-font-size: var(--font-0-rem);
+  --reader-mode-h5-font-size: var(--font-down-1-rem);
+  --reader-mode-h6-font-size: var(--font-down-2-rem);
+  --reader-mode-small-font-size: 0.75rem;
+  --reader-mode-big-font-size: 1.5rem;
+  --reader-mode-offset: 0;
+  --topic-grid-width: auto auto;
+  --reader-mode-topic-body-width: calc(
+    var(--topic-body-width) + var(--topic-body-width-padding) * 2
+  );
+}
+
 .timeline-controls {
   display: flex;
   .reader-mode-toggle {
@@ -44,13 +64,16 @@
 }
 
 .reader-mode {
+  .container.posts {
+    grid-template-columns: var(--topic-grid-width);
+  }
   .topic-area#topic::before {
     content: "";
     display: block;
     width: 100vw;
     height: 100vh;
     position: fixed;
-    background: var(--secondary);
+    background: var(--reader-mode-bg-color);
     opacity: 0.95;
     left: 0;
     top: 0;
@@ -75,10 +98,17 @@
   #topic-title {
     position: relative;
     z-index: 102;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: var(--reader-mode-font-family) !important;
+    }
+    font-family: var(--reader-mode-font-family) !important;
   }
 
   .posts-wrapper {
-    background-color: var(--secondary);
     z-index: 102;
   }
 
@@ -136,7 +166,100 @@
   .d-header-icons,
   .topic-admin-menu-button,
   .timeline-scrollarea-wrapper,
-  .timeline-footer-controls {
+  .timeline-footer-controls,
+  .topic-map {
     pointer-events: none;
+  }
+  .topic-admin-menu-button-container {
+    display: none;
+  }
+  .reader-mode-options-trigger {
+    opacity: 1 !important;
+    position: relative;
+  }
+
+  // Post Width Stuff
+  .container.posts {
+    position: relative;
+    left: var(--reader-mode-offset) !important;
+    .row {
+      width: 100%;
+      max-width: unset;
+    }
+  }
+
+  .topic-body {
+    width: var(--reader-mode-topic-body-width) !important;
+  }
+
+  // Font stuff
+  .cooked {
+    color: var(--reader-mode-text-color) !important;
+    font-family: var(--reader-mode-font-family) !important;
+    p,
+    span,
+    ul li,
+    ol li,
+    table {
+      font-size: var(--reader-mode-font-size) !important;
+    }
+    h1 {
+      font-size: var(--reader-mode-h1-font-size) !important;
+    }
+    h2 {
+      font-size: var(--reader-mode-h2-font-size) !important;
+    }
+    h3 {
+      font-size: var(--reader-mode-h3-font-size) !important;
+    }
+    h4 {
+      font-size: var(--reader-mode-h4-font-size) !important;
+    }
+    h5 {
+      font-size: var(--reader-mode-h5-font-size) !important;
+    }
+    h6 {
+      font-size: var(--reader-mode-h6-font-size) !important;
+    }
+    small {
+      font-size: var(--reader-mode-small-font-size) !important;
+    }
+    big {
+      font-size: var(--reader-mode-big-font-size) !important;
+    }
+  }
+}
+
+.reader-mode-options-content .fk-d-menu__inner-content {
+  border-radius: 2px;
+}
+
+.reader-mode-options {
+  --base-font-size: var(--base-font-size) !important;
+  &__body {
+    padding: 1em;
+  }
+  &__section {
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid var(--primary-low);
+  }
+  &__section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  &__section-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 0;
+    gap: 0.5em;
+  }
+  &__section-item label,
+  &__section-item select {
+    margin: 0;
+    font-weight: normal;
+  }
+  &__section-item select {
+    padding: 0.5em;
   }
 }
