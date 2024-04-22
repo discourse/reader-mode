@@ -7,6 +7,7 @@ import DButton from "discourse/components/d-button";
 import bodyClass from "discourse/helpers/body-class";
 import concatClass from "discourse/helpers/concat-class";
 import discourseLater from "discourse-common/lib/later";
+import ReaderModeOptions from "./reader-mode-options";
 
 export default class ReaderModeToggle extends Component {
   @tracked readerModeActive = false;
@@ -61,5 +62,8 @@ export default class ReaderModeToggle extends Component {
         (if this.readerModeActive "active")
       }}
     />
+    {{#if this.readerModeActive}}
+      <ReaderModeOptions />
+    {{/if}}
   </template>
 }
