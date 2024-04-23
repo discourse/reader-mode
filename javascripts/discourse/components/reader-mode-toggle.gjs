@@ -12,6 +12,8 @@ import ReaderModeOptions from "./reader-mode-options";
 export default class ReaderModeToggle extends Component {
   @tracked readerModeActive = false;
   @tracked isTransitioning = false;
+  @tracked topicGridWidth = undefined;
+  @tracked timelineGridWidth = undefined;
 
   get bodyClassText() {
     return this.isTransitioning
@@ -46,10 +48,37 @@ export default class ReaderModeToggle extends Component {
     document.removeEventListener("keydown", this.handleDocumentKeydown);
   }
 
+  @action
+  setupWidth() {
+    this.topicGridWidth = document.documentElement
+      .querySelector(".post-stream .topic-post")
+      .getBoundingClientRect().width;
+
+    this.timelineGridWidth = document.documentElement
+      .querySelector(".topic-navigation")
+      .getBoundingClientRect().width;
+
+    let hasDiscoToc =
+      document.documentElement.querySelector(".d-toc-installed");
+
+    if (hasDiscoToc) {
+      document.documentElement.style.setProperty(
+        "--reader-mode-topic-grid",
+        `75% 25%`
+      );
+    } else {
+      document.documentElement.style.setProperty(
+        "--reader-mode-topic-grid",
+        `${this.topicGridWidth}px ${this.timelineGridWidth}px`
+      );
+    }
+  }
+
   <template>
     {{bodyClass this.bodyClassText}}
     <DButton
       {{didInsert this.addEventListener}}
+      {{didInsert this.setupWidth}}
       {{willDestroy this.cleanUpEventListener}}
       @action={{this.toggleReaderMode}}
       @icon="book-reader"
@@ -63,7 +92,10 @@ export default class ReaderModeToggle extends Component {
       }}
     />
     {{#if this.readerModeActive}}
-      <ReaderModeOptions />
+      <ReaderModeOptions
+        @topicGridWidth={{this.topicGridWidth}}
+        @timelineGridWidth={{this.timelineGridWidth}}
+      />
     {{/if}}
   </template>
 }
