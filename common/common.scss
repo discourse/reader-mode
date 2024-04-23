@@ -12,7 +12,7 @@
   --reader-mode-small-font-size: 0.75rem;
   --reader-mode-big-font-size: 1.5rem;
   --reader-mode-offset: 0;
-  --topic-grid-width: auto auto;
+  --reader-mode-topic-grid: inherit;
   --reader-mode-topic-body-width: calc(
     var(--topic-body-width) + var(--topic-body-width-padding) * 2
   );
@@ -65,7 +65,7 @@
 
 .reader-mode {
   .container.posts {
-    grid-template-columns: var(--topic-grid-width);
+    grid-template-columns: var(--reader-mode-topic-grid) !important;
   }
   .topic-area#topic::before {
     content: "";

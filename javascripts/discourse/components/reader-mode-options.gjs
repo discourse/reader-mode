@@ -3,13 +3,11 @@ import { tracked } from "@glimmer/tracking";
 import { array } from "@ember/helper";
 import { on } from "@ember/modifier";
 import { action } from "@ember/object";
-import didInsert from "@ember/render-modifiers/modifiers/did-insert";
 import icon from "discourse-common/helpers/d-icon";
 import DMenu from "float-kit/components/d-menu";
 
 export default class ReaderModeOptions extends Component {
   @tracked showOptions = false;
-  @tracked originalWidth = undefined;
 
   @action
   toggleOptions() {
@@ -76,25 +74,15 @@ export default class ReaderModeOptions extends Component {
     );
     // increase defined grid width for topic content
     document.documentElement.style.setProperty(
-      "--topic-grid-width",
-      `${this.originalWidth + parseInt(e.target.value, 10)}px auto`
-    );
-  }
-
-  @action
-  setTopicWidth() {
-    this.originalWidth = document.documentElement
-      .querySelector(".post-stream .topic-post")
-      .getBoundingClientRect().width;
-    document.documentElement.style.setProperty(
-      "--topic-grid-width",
-      `${this.originalWidth}px auto`
+      "--reader-mode-topic-grid",
+      `${this.args.topicGridWidth + parseInt(e.target.value, 10)}px ${
+        this.args.timelineGridWidth
+      }px`
     );
   }
 
   <template>
     <DMenu
-      {{didInsert this.setTopicWidth}}
       @identifier="reader-mode-options"
       @triggers={{array "click"}}
       @placementStrategy="fixed"
