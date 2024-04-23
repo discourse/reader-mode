@@ -127,7 +127,7 @@ export default class ReaderModeOptions extends Component {
                   id="font-size"
                   min="0"
                   max="10"
-                  step="1"
+                  step="0.125"
                   value="0"
                   {{on "input" this.selectFontSize}}
                 />
