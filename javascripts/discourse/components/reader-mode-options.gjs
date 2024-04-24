@@ -87,6 +87,7 @@ export default class ReaderModeOptions extends Component {
       @triggers={{array "click"}}
       @placementStrategy="fixed"
       @class="reader-mode-options"
+      @inline={{true}}
     >
       <:trigger>
         {{icon "cog"}}
