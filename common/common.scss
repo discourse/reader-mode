@@ -145,7 +145,8 @@
     color: var(--tertiary);
   }
 
-  .topic-avatar img {
+  .topic-avatar img,
+  .topic-avatar .avatar-flair {
     opacity: 0.125;
     transition: opacity 0.3s;
     filter: grayscale(1);
