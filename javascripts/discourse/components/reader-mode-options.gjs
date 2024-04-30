@@ -95,7 +95,7 @@ export default class ReaderModeOptions extends Component {
       <:content>
         <div class="reader-mode-options__body">
           <div class="reader-mode-options__section">
-            <h3 class="reader-mode-options__section-title">Readability</h3>
+            <h4 class="reader-mode-options__section-title">Text Settings</h4>
             <div class="reader-mode-options__section-content">
               <div class="reader-mode-options__section-item">
                 <label for="font-family">Font Style</label>
