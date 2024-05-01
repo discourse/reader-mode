@@ -46,10 +46,29 @@ export default class ReaderModeOptions extends Component {
                   id="font-family"
                   {{on "input" this.readerMode.selectFont}}
                 >
-                  <option selected={{(if (eq this.readerMode.fontFamily "Arial") "true")}} value="Arial">Arial</option>
-                  <option selected {{(if (eq this.readerMode.fontFamily "Serif") "true")}} value="Serif">Serif</option>
-                  <option selected={{(if (eq this.readerMode.fontFamily "sans-serif") "true")}} value="sans-serif">Sans-serif</option>
-                  <option selected={{(if (eq this.readerMode.fontFamily "Courier") "true")}} value="Courier">Courier</option>
+                  <option
+                    selected={{(if
+                      (eq this.readerMode.fontFamily "Arial") "true"
+                    )}}
+                    value="Arial"
+                  >Arial</option>
+                  <option
+                    selected
+                    {{(if (eq this.readerMode.fontFamily "Serif") "true")}}
+                    value="Serif"
+                  >Serif</option>
+                  <option
+                    selected={{(if
+                      (eq this.readerMode.fontFamily "sans-serif") "true"
+                    )}}
+                    value="sans-serif"
+                  >Sans-serif</option>
+                  <option
+                    selected={{(if
+                      (eq this.readerMode.fontFamily "Courier") "true"
+                    )}}
+                    value="Courier"
+                  >Courier</option>
                 </select>
               </div>
               <div class="reader-mode-options__section-item">

@@ -103,7 +103,8 @@ export default class ReaderMode extends Service {
     if (Math.round(10 * (this.offsetIncrement - 20.8)) / 10 < 0) {
       this.offsetIncrement = 0;
     } else {
-      this.offsetIncrement = Math.round(10 * (this.offsetIncrement - 20.8)) / 10;
+      this.offsetIncrement =
+        Math.round(10 * (this.offsetIncrement - 20.8)) / 10;
     }
     localStorage.setItem("readerModeOffsetIncrement", this.offsetIncrement);
     this.selectOffset();
@@ -198,13 +199,19 @@ export default class ReaderMode extends Service {
     }
   }
 
-  selectColors(textValue,bgValue) {
-    document.documentElement.style.setProperty( "--reader-mode-bg-color",bgValue);
-    document.documentElement.style.setProperty( "--reader-mode-text-color",textValue);
+  selectColors(textValue, bgValue) {
+    document.documentElement.style.setProperty(
+      "--reader-mode-bg-color",
+      bgValue
+    );
+    document.documentElement.style.setProperty(
+      "--reader-mode-text-color",
+      textValue
+    );
   }
   setDefaultColors() {
     this.colorMode = "default";
-    this.selectColors("var(--primary)","var(--secondary)");
+    this.selectColors("var(--primary)", "var(--secondary)");
   }
 
   @action
@@ -213,7 +220,7 @@ export default class ReaderMode extends Service {
       this.setDefaultColors();
     } else {
       this.colorMode = "light";
-      this.selectColors("#424547","#FAFAFA");
+      this.selectColors("#424547", "#FAFAFA");
     }
     localStorage.setItem("readerModeColorMode", this.colorMode);
   }
@@ -224,7 +231,7 @@ export default class ReaderMode extends Service {
       this.setDefaultColors();
     } else {
       this.colorMode = "sepia";
-      this.selectColors("#424547","#F5F1E4");
+      this.selectColors("#424547", "#F5F1E4");
     }
     localStorage.setItem("readerModeColorMode", this.colorMode);
   }
@@ -235,7 +242,7 @@ export default class ReaderMode extends Service {
       this.setDefaultColors();
     } else {
       this.colorMode = "dark";
-      this.selectColors("#D3D7DA","#202121");
+      this.selectColors("#D3D7DA", "#202121");
     }
 
     localStorage.setItem("readerModeColorMode", this.colorMode);
@@ -244,11 +251,11 @@ export default class ReaderMode extends Service {
   @action
   setupColors() {
     if (this.colorMode === "light") {
-      this.selectColors("#424547","#FAFAFA");
+      this.selectColors("#424547", "#FAFAFA");
     } else if (this.colorMode === "sepia") {
-      this.selectColors("#424547","#F5F1E4");
+      this.selectColors("#424547", "#F5F1E4");
     } else if (this.colorMode === "dark") {
-      this.selectColors("#D3D7DA","#202121");
+      this.selectColors("#D3D7DA", "#202121");
     } else {
       this.setDefaultColors();
     }
