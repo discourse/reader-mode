@@ -12,11 +12,13 @@ export default class ReaderModeToggle extends Component {
   @service readerMode;
 
   get bodyClassText() {
-    return this.readerMode.isTransitioning
-      ? "reader-mode-transitioning reader-mode"
-      : this.readerMode.readerModeActive
-      ? "reader-mode"
-      : "";
+    if (this.readerMode.isTransitioning) {
+      return "reader-mode-transitioning reader-mode";
+    } else if (this.readerMode.readerModeActive) {
+      return "reader-mode";
+    } else {
+      return "";
+    }
   }
 
   handleDocumentKeydown(e) {
