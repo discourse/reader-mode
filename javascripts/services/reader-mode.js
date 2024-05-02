@@ -135,9 +135,12 @@ export default class ReaderMode extends Service {
     // increase with of topic body
     this.setProperty("--reader-mode-topic-body-width", topicBodyWidthVariable);
     // increase defined grid width for topic content
-    this.setProperty("--reader-mode-topic-grid", `${this.topicGridWidth + this.offsetIncrement}px ${
-      this.timelineGridWidth
-    }px`);
+    this.setProperty(
+      "--reader-mode-topic-grid",
+      `${this.topicGridWidth + this.offsetIncrement}px ${
+        this.timelineGridWidth
+      }px`
+    );
   }
 
   @action
@@ -176,7 +179,10 @@ export default class ReaderMode extends Service {
     if (hasDiscoToc) {
       this.setProperty("--reader-mode-topic-grid", "75% 25%");
     } else {
-      this.setProperty("--reader-mode-topic-grid", `${this.topicGridWidth}px ${this.timelineGridWidth}px`)
+      this.setProperty(
+        "--reader-mode-topic-grid",
+        `${this.topicGridWidth}px ${this.timelineGridWidth}px`
+      );
     }
   }
 
