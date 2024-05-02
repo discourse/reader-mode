@@ -41,11 +41,7 @@ export default class ReaderMode extends Service {
       this.fontFamily = e.target.value;
       localStorage.setItem("readerModeFontFamily", this.fontFamily);
     }
-
-    document.documentElement.style.setProperty(
-      "--reader-mode-font-family",
-      this.fontFamily
-    );
+    this.setProperty("--reader-mode-font-family", this.fontFamily);
   }
 
   @action
@@ -135,22 +131,13 @@ export default class ReaderMode extends Service {
     }px`;
 
     // Move the content to the left when width increases
-    document.documentElement.style.setProperty(
-      "--reader-mode-offset",
-      contentWidthVariable
-    );
+    this.setProperty("--reader-mode-offset", contentWidthVariable);
     // increase with of topic body
-    document.documentElement.style.setProperty(
-      "--reader-mode-topic-body-width",
-      topicBodyWidthVariable
-    );
+    this.setProperty("--reader-mode-topic-body-width", topicBodyWidthVariable);
     // increase defined grid width for topic content
-    document.documentElement.style.setProperty(
-      "--reader-mode-topic-grid",
-      `${this.topicGridWidth + this.offsetIncrement}px ${
-        this.timelineGridWidth
-      }px`
-    );
+    this.setProperty("--reader-mode-topic-grid", `${this.topicGridWidth + this.offsetIncrement}px ${
+      this.timelineGridWidth
+    }px`);
   }
 
   @action
@@ -187,28 +174,21 @@ export default class ReaderMode extends Service {
       document.documentElement.querySelector(".d-toc-installed");
 
     if (hasDiscoToc) {
-      document.documentElement.style.setProperty(
-        "--reader-mode-topic-grid",
-        `75% 25%`
-      );
+      this.setProperty("--reader-mode-topic-grid", "75% 25%");
     } else {
-      document.documentElement.style.setProperty(
-        "--reader-mode-topic-grid",
-        `${this.topicGridWidth}px ${this.timelineGridWidth}px`
-      );
+      this.setProperty("--reader-mode-topic-grid", `${this.topicGridWidth}px ${this.timelineGridWidth}px`)
     }
   }
 
-  selectColors(textValue, bgValue) {
-    document.documentElement.style.setProperty(
-      "--reader-mode-bg-color",
-      bgValue
-    );
-    document.documentElement.style.setProperty(
-      "--reader-mode-text-color",
-      textValue
-    );
+  setProperty(property, value) {
+    document.documentElement.style.setProperty(property, value);
   }
+
+  selectColors(textValue, bgValue) {
+    this.setProperty("--reader-mode-text-color", textValue);
+    this.setProperty("--reader-mode-bg-color", bgValue);
+  }
+
   setDefaultColors() {
     this.colorMode = "default";
     this.selectColors("var(--primary)", "var(--secondary)");
