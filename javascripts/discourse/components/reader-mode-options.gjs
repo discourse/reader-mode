@@ -21,6 +21,15 @@ export default class ReaderModeOptions extends Component {
     this.showOptions = !this.showOptions;
   }
 
+  @action
+  setupReaderMode() {
+    this.readerMode.selectFontSize();
+    this.readerMode.selectFont();
+    this.readerMode.selectOffset();
+    this.readerMode.setupWidth();
+    this.readerMode.setupColors();
+  }
+
   <template>
     <DMenu
       @identifier="reader-mode-options"
@@ -28,11 +37,7 @@ export default class ReaderModeOptions extends Component {
       @placementStrategy="fixed"
       @class="reader-mode-options"
       @inline={{true}}
-      {{didInsert this.readerMode.selectFontSize}}
-      {{didInsert this.readerMode.selectFont}}
-      {{didInsert this.readerMode.selectOffset}}
-      {{didInsert this.readerMode.setupWidth}}
-      {{didInsert this.readerMode.setupColors}}
+      {{didInsert this.setupReaderMode}}
     >
       <:trigger>
         {{icon "cog"}}
