@@ -1,4 +1,4 @@
-example_setting:
-  default: true
-  description:
-    en: A description of a setting.
+svg_icons:
+  default: "font|arrows-alt-h|compress-alt"
+  type: "list"
+  list_type: "compact"
