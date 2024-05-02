@@ -80,7 +80,7 @@ export default class ReaderModeOptions extends Component {
                   @action={{this.readerMode.decrementFontSize}}
                   @preventFocus={{true}}
                   @icon="font"
-                  @class="btn-flat reader-mode-options__item-button decrease-font text-changes"
+                  class="btn-flat reader-mode-options__item-button decrease-font text-changes"
                   @disabled={{if
                     (eq this.readerMode.fontSizeIncrement 0)
                     "true"
@@ -90,7 +90,7 @@ export default class ReaderModeOptions extends Component {
                   @action={{this.readerMode.incrementFontSize}}
                   @preventFocus={{true}}
                   @icon="font"
-                  @class="btn-flat reader-mode-options__item-button increase-font text-changes"
+                  class="btn-flat reader-mode-options__item-button increase-font text-changes"
                   @disabled={{if
                     (eq
                       this.readerMode.fontSizeIncrement
@@ -105,14 +105,14 @@ export default class ReaderModeOptions extends Component {
                   @action={{this.readerMode.decrementOffset}}
                   @preventFocus={{true}}
                   @icon="compress-alt"
-                  @class="btn-flat reader-mode-options__item-button decrease-width text-changes"
+                  class="btn-flat reader-mode-options__item-button decrease-width text-changes"
                   @disabled={{if (eq this.readerMode.offsetIncrement 0) "true"}}
                 />
                 <DButton
                   @action={{this.readerMode.incrementOffset}}
                   @preventFocus={{true}}
                   @icon="arrows-alt-h"
-                  @class="btn-flat reader-mode-options__item-button increase-width text-changes"
+                  class="btn-flat reader-mode-options__item-button increase-width text-changes"
                   @disabled={{if
                     (eq
                       this.readerMode.offsetIncrement
@@ -127,7 +127,7 @@ export default class ReaderModeOptions extends Component {
                   @action={{this.readerMode.toggleLightMode}}
                   @preventFocus={{true}}
                   @icon="circle"
-                  @class={{concatClass
+                  class={{concatClass
                     "btn-flat reader-mode-options__item-button light-mode color-mode"
                     (if (eq this.readerMode.colorMode "light") "active")
                   }}
@@ -136,7 +136,7 @@ export default class ReaderModeOptions extends Component {
                   @action={{this.readerMode.toggleSepiaMode}}
                   @preventFocus={{true}}
                   @icon="circle"
-                  @class={{concatClass
+                  class={{concatClass
                     "btn-flat reader-mode-options__item-button sepia-mode color-mode"
                     (if (eq this.readerMode.colorMode "sepia") "active")
                   }}
@@ -145,7 +145,7 @@ export default class ReaderModeOptions extends Component {
                   @action={{this.readerMode.toggleDarkMode}}
                   @preventFocus={{true}}
                   @icon="circle"
-                  @class={{concatClass
+                  class={{concatClass
                     "btn-flat reader-mode-options__item-button dark-mode color-mode"
                     (if (eq this.readerMode.colorMode "dark") "active")
                   }}
