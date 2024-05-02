@@ -37,7 +37,7 @@ export default class ReaderMode extends Service {
 
   @action
   selectFont(e) {
-    if (e.target) {
+    if (e?.target) {
       this.fontFamily = e.target.value;
       localStorage.setItem("readerModeFontFamily", this.fontFamily);
     }
