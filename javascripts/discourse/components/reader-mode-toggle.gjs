@@ -22,7 +22,7 @@ export default class ReaderModeToggle extends Component {
   }
 
   handleDocumentKeydown(e) {
-    if (e.ctrlKey && e.shiftKey && e.key === "r") {
+    if (e.ctrlKey && e.altKey && e.key === "r" || e.key === "®") {
       this.readerMode.toggleReaderMode();
     }
   }
