@@ -46,7 +46,7 @@ export default class ReaderModeToggle extends Component {
       @action={{this.readerMode.toggleReaderMode}}
       @icon="book-reader"
       @preventFocus={{true}}
-      title="Toggle Reader Mode (ctrl + shift + r)"
+      title="Toggle Reader Mode (ctrl + alt + r)"
       class={{concatClass
         "icon"
         "btn-default"
