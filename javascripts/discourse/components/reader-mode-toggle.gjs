@@ -22,7 +22,7 @@ export default class ReaderModeToggle extends Component {
   }
 
   handleDocumentKeydown(e) {
-    if (e.ctrlKey && e.shiftKey && e.key === "r") {
+    if (e.ctrlKey && e.altKey && (e.key === "r" || e.key === "®")) {
       this.readerMode.toggleReaderMode();
     }
   }
@@ -46,7 +46,7 @@ export default class ReaderModeToggle extends Component {
       @action={{this.readerMode.toggleReaderMode}}
       @icon="book-reader"
       @preventFocus={{true}}
-      title="Toggle Reader Mode (ctrl + shift + r)"
+      title="Toggle Reader Mode (ctrl + alt + r)"
       class={{concatClass
         "icon"
         "btn-default"
