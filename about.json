@@ -1,9 +1,9 @@
 {
-  "name": "reader-mode",
+  "name": "Reader Mode",
   "component": true,
   "authors": "Discourse",
-  "about_url": "TODO: Put your theme's public repo or Meta topic URL here",
-  "license_url": "TODO: Put your theme's LICENSE URL here",
+  "about_url": "https://meta.discourse.org/t/reader-mode/307916",
+  "license_url": "https://github.com/discourse/reader-mode/blob/main/LICENSE",
   "learn_more": "TODO",
   "theme_version": "0.0.1",
   "minimum_discourse_version": null,
