@@ -35,7 +35,7 @@ export default class ReaderModeOptions extends Component {
       @identifier="reader-mode-options"
       @triggers={{array "click"}}
       @placementStrategy="fixed"
-      @class="reader-mode-options"
+      class="reader-mode-options"
       @inline={{true}}
       {{didInsert this.setupReaderMode}}
     >
