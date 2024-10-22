@@ -29,21 +29,6 @@
   }
 }
 
-#reply-control.open,
-.extra-info-wrapper,
-.video-placeholder-container {
-  transition: filter 0.3s;
-}
-
-.post-notice,
-.time-gap.small-action {
-  transition: height 0.3s, opacity 0.3s;
-}
-
-.topic-map {
-  transition: height 0.3s, opacity 0.5s;
-}
-
 #post_1 .topic-body,
 #post_1 .topic-avatar {
   border-top: 1px solid transparent;
@@ -52,15 +37,6 @@
 .time-gap + .topic-post .topic-body,
 .time-gap + .topic-post .topic-avatar {
   border-top: 1px solid transparent;
-}
-
-.header-sidebar-toggle,
-.home-logo-wrapper-outlet,
-.d-header-icons,
-.timeline-controls .btn:not(.reader-mode-toggle),
-.timeline-scrollarea-wrapper,
-.timeline-footer-controls {
-  transition: opacity 0.3s;
 }
 
 .reader-mode {
@@ -94,7 +70,6 @@
 
   .discourse-reactions-counter {
     opacity: 0;
-    transition: opacity 0.3s;
   }
 
   .extra-info-wrapper,
@@ -159,7 +134,6 @@
   .topic-avatar img,
   .topic-avatar .avatar-flair {
     opacity: 0.125;
-    transition: opacity 0.3s;
     filter: grayscale(1);
   }
 
