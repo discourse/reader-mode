@@ -40,7 +40,7 @@ export default class ReaderModeOptions extends Component {
       {{didInsert this.setupReaderMode}}
     >
       <:trigger>
-        {{icon "cog"}}
+        {{icon "gear"}}
       </:trigger>
       <:content>
         <div class="reader-mode-options__body">
