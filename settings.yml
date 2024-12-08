@@ -1,4 +1,4 @@
 svg_icons:
-  default: "font|arrows-alt-h|compress-alt"
+  default: "font|left-right|down-left-and-up-right-to-center"
   type: "list"
   list_type: "compact"

@@ -104,14 +104,14 @@ export default class ReaderModeOptions extends Component {
                 <DButton
                   @action={{this.readerMode.decrementOffset}}
                   @preventFocus={{true}}
-                  @icon="compress-alt"
+                  @icon="down-left-and-up-right-to-center"
                   class="btn-flat reader-mode-options__item-button decrease-width text-changes"
                   @disabled={{if (eq this.readerMode.offsetIncrement 0) "true"}}
                 />
                 <DButton
                   @action={{this.readerMode.incrementOffset}}
                   @preventFocus={{true}}
-                  @icon="arrows-alt-h"
+                  @icon="left-right"
                   class="btn-flat reader-mode-options__item-button increase-width text-changes"
                   @disabled={{if
                     (eq

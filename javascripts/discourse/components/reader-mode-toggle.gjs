@@ -44,7 +44,7 @@ export default class ReaderModeToggle extends Component {
       {{didInsert this.readerMode.setupWidth}}
       {{willDestroy this.cleanUpEventListener}}
       @action={{this.readerMode.toggleReaderMode}}
-      @icon="book-reader"
+      @icon="book-open-reader"
       @preventFocus={{true}}
       title="Toggle Reader Mode (ctrl + alt + r)"
       class={{concatClass
