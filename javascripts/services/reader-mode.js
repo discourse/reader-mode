@@ -1,7 +1,7 @@
 import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
 import Service from "@ember/service";
-import discourseLater from "discourse-common/lib/later";
+import discourseLater from "discourse/lib/later";
 
 export default class ReaderMode extends Service {
   @tracked readerModeActive = false;

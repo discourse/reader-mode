@@ -8,7 +8,7 @@ import { service } from "@ember/service";
 import { eq } from "truth-helpers";
 import DButton from "discourse/components/d-button";
 import concatClass from "discourse/helpers/concat-class";
-import icon from "discourse-common/helpers/d-icon";
+import icon from "discourse/helpers/d-icon";
 import DMenu from "float-kit/components/d-menu";
 
 export default class ReaderModeOptions extends Component {
