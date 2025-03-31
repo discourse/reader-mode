@@ -20,6 +20,7 @@
 
 .timeline-controls {
   display: flex;
+
   .reader-mode-toggle {
     margin-right: 0.5em;
   }
@@ -43,13 +44,23 @@
   .d-header {
     background-color: var(--reader-mode-bg-color);
   }
+
   .extra-info-wrapper .topic-link,
   #topic-title h1 a {
     color: var(--reader-mode-text-color);
   }
+
   .container.posts {
     grid-template-columns: var(--reader-mode-topic-grid) !important;
+    position: relative;
+    left: var(--reader-mode-offset) !important;
+
+    .row {
+      width: 100%;
+      max-width: unset;
+    }
   }
+
   .topic-area#topic::before {
     content: "";
     display: block;
@@ -84,6 +95,7 @@
   #topic-title {
     position: relative;
     z-index: 102;
+
     h1,
     h2,
     h3,
@@ -146,9 +158,11 @@
   .time-gap + .topic-post .topic-avatar {
     border-top: 1px solid var(--primary-low);
   }
+
   .reader-mode-icon {
     z-index: 9999;
   }
+
   .d-header-icons,
   .topic-admin-menu-button,
   .timeline-scrollarea-wrapper,
@@ -156,71 +170,76 @@
   .topic-map {
     pointer-events: none;
   }
+
   .topic-admin-menu-button-container {
     display: none;
   }
+
   .reader-mode-options-trigger,
   .reader-mode-options__item-button {
     opacity: 1 !important;
     position: relative;
   }
+
   .reader-mode-options__item-button[disabled],
   .reader-mode-options__item-button:disabled {
     opacity: 0.25 !important;
   }
+
   .reader-mode-options__item-button.text-changes {
     flex-grow: 1;
     font-size: 20px;
+
     svg {
       color: var(--primary-medium);
     }
+
     &.decrease-font {
       align-items: end;
+
       svg {
         transform: scale(0.75) translateY(2px);
       }
     }
+
     &.decrease-width {
       svg {
         transform: rotate(45deg);
       }
     }
   }
+
   .reader-mode-options__item-button.color-mode {
     svg {
       border-radius: 50%;
       border: 1px solid var(--primary-400);
       transition: border-color 0.125s;
     }
+
     &.active svg {
       border-color: var(--tertiary);
     }
+
     &:hover {
       svg {
         border-color: var(--tertiary);
       }
     }
+
     &.light-mode svg {
       color: #fafafa;
     }
+
     &.sepia-mode svg {
       color: #f5f1e4;
     }
+
     &.dark-mode svg {
       color: #202121;
     }
   }
 
   // Post Width Stuff
-  .container.posts {
-    position: relative;
-    left: var(--reader-mode-offset) !important;
-    .row {
-      width: 100%;
-      max-width: unset;
-    }
-  }
-
   .topic-body {
     width: var(--reader-mode-topic-body-width) !important;
   }
@@ -229,6 +248,7 @@
   .cooked {
     color: var(--reader-mode-text-color) !important;
     font-family: var(--reader-mode-font-family) !important;
+
     p,
     span,
     ul li,
@@ -237,34 +257,42 @@
       font-size: var(--reader-mode-font-size) !important;
       font-family: var(--reader-mode-font-family) !important;
     }
+
     h1 {
       font-size: var(--reader-mode-h1-font-size) !important;
       font-family: var(--reader-mode-font-family) !important;
     }
+
     h2 {
       font-size: var(--reader-mode-h2-font-size) !important;
       font-family: var(--reader-mode-font-family) !important;
     }
+
     h3 {
       font-size: var(--reader-mode-h3-font-size) !important;
       font-family: var(--reader-mode-font-family) !important;
     }
+
     h4 {
       font-size: var(--reader-mode-h4-font-size) !important;
       font-family: var(--reader-mode-font-family) !important;
     }
+
     h5 {
       font-size: var(--reader-mode-h5-font-size) !important;
       font-family: var(--reader-mode-font-family) !important;
     }
+
     h6 {
       font-size: var(--reader-mode-h6-font-size) !important;
       font-family: var(--reader-mode-font-family) !important;
     }
+
     small {
       font-size: var(--reader-mode-small-font-size) !important;
       font-family: var(--reader-mode-font-family) !important;
     }
+
     big {
       font-size: var(--reader-mode-big-font-size) !important;
       font-family: var(--reader-mode-font-family) !important;
@@ -278,17 +306,21 @@
 
 .reader-mode-options {
   --base-font-size: var(--base-font-size) !important;
+
   &__body {
     padding: 1em;
   }
+
   &__section {
     margin-bottom: 0.5em;
     border-bottom: 1px solid var(--primary-low);
   }
+
   &__section:last-child {
     border-bottom: none;
     margin-bottom: 0;
   }
+
   &__section-item {
     display: flex;
     justify-content: space-between;
@@ -296,11 +328,13 @@
     padding: 0.5em 0;
     gap: 0.5em;
   }
+
   &__section-item label,
   &__section-item select {
     margin: 0;
     font-weight: normal;
   }
+
   &__section-item select {
     padding: 0.5em;
     width: 100%;
