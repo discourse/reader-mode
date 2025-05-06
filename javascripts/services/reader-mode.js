@@ -1,6 +1,6 @@
 import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
-import { next } from "@ember/runloop";
+import { schedule } from "@ember/runloop";
 import Service from "@ember/service";
 import discourseLater from "discourse/lib/later";
 
@@ -146,8 +146,9 @@ export default class ReaderMode extends Service {
 
   @action
   setupWidth() {
-    // TODO (glimmer-post-stream): remove the call to next once the PostStream widget is modernized
-    next(() => {
+    // TODO (glimmer-post-stream): deferring to schedule("afterRender") won't be needed once the PostStream widget is
+    //  modernized
+    schedule("afterRender", () => {
       if (
         document.documentElement.style.getPropertyValue(
           "--reader-mode-topic-grid"
