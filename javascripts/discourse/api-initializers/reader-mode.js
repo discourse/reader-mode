@@ -1,6 +1,6 @@
 import { apiInitializer } from "discourse/lib/api";
 import readerModeToggle from "../components/reader-mode-toggle";
 
-export default apiInitializer("1.8.0", (api) => {
+export default apiInitializer((api) => {
   api.renderInOutlet("timeline-controls-before", readerModeToggle);
 });
