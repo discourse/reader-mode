@@ -146,48 +146,45 @@ export default class ReaderMode extends Service {
 
   @action
   setupWidth() {
-      if (
-        document.documentElement.style.getPropertyValue(
-          "--reader-mode-topic-grid"
-        )
-      ) {
-        return;
-      }
+    if (
+      document.documentElement.style.getPropertyValue(
+        "--reader-mode-topic-grid"
+      )
+    ) {
+      return;
+    }
 
-      this.topicGridWidth =
-        Math.round(
-          10 *
-            document.documentElement
-              .querySelector(".post-stream .topic-post")
-              .getBoundingClientRect().width
-        ) / 10;
+    this.topicGridWidth =
+      Math.round(
+        10 *
+          document.documentElement
+            .querySelector(".post-stream .topic-post")
+            .getBoundingClientRect().width
+      ) / 10;
 
-      localStorage.setItem("readerModeTopicGridWidth", this.topicGridWidth);
+    localStorage.setItem("readerModeTopicGridWidth", this.topicGridWidth);
 
-      this.timelineGridWidth =
-        Math.round(
-          10 *
-            document.documentElement
-              .querySelector(".topic-navigation")
-              .getBoundingClientRect().width
-        ) / 10;
+    this.timelineGridWidth =
+      Math.round(
+        10 *
+          document.documentElement
+            .querySelector(".topic-navigation")
+            .getBoundingClientRect().width
+      ) / 10;
 
-      localStorage.setItem(
-        "readerModeTimelineGridWidth",
-        this.timelineGridWidth
+    localStorage.setItem("readerModeTimelineGridWidth", this.timelineGridWidth);
+
+    let hasDiscoToc =
+      document.documentElement.querySelector(".d-toc-installed");
+
+    if (hasDiscoToc) {
+      this.setProperty("--reader-mode-topic-grid", "75% 25%");
+    } else {
+      this.setProperty(
+        "--reader-mode-topic-grid",
+        `${this.topicGridWidth}px ${this.timelineGridWidth}px`
       );
-
-      let hasDiscoToc =
-        document.documentElement.querySelector(".d-toc-installed");
-
-      if (hasDiscoToc) {
-        this.setProperty("--reader-mode-topic-grid", "75% 25%");
-      } else {
-        this.setProperty(
-          "--reader-mode-topic-grid",
-          `${this.topicGridWidth}px ${this.timelineGridWidth}px`
-        );
-      }
+    }
   }
 
   setProperty(property, value) {
