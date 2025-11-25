@@ -1,6 +1,5 @@
 import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
-import { schedule } from "@ember/runloop";
 import Service from "@ember/service";
 import discourseLater from "discourse/lib/later";
 
