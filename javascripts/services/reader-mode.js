@@ -146,9 +146,6 @@ export default class ReaderMode extends Service {
 
   @action
   setupWidth() {
-    // TODO (glimmer-post-stream): deferring to schedule("afterRender") won't be needed once the PostStream widget is
-    //  modernized
-    schedule("afterRender", () => {
       if (
         document.documentElement.style.getPropertyValue(
           "--reader-mode-topic-grid"
@@ -191,7 +188,6 @@ export default class ReaderMode extends Service {
           `${this.topicGridWidth}px ${this.timelineGridWidth}px`
         );
       }
-    });
   }
 
   setProperty(property, value) {
