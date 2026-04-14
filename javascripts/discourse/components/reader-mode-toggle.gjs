@@ -6,6 +6,7 @@ import { service } from "@ember/service";
 import DButton from "discourse/components/d-button";
 import bodyClass from "discourse/helpers/body-class";
 import concatClass from "discourse/helpers/concat-class";
+import { i18n } from "discourse-i18n";
 import ReaderModeOptions from "./reader-mode-options";
 
 export default class ReaderModeToggle extends Component {
@@ -46,7 +47,7 @@ export default class ReaderModeToggle extends Component {
       @action={{this.readerMode.toggleReaderMode}}
       @icon="book-open-reader"
       @preventFocus={{true}}
-      title="Toggle Reader Mode (ctrl + alt + r)"
+      title={{i18n (themePrefix "toggle_reader_mode")}}
       class={{concatClass
         "icon"
         "btn-default"
